@@ -1,4 +1,4 @@
-import { SET_CURRENT_USER } from '../constants/actionTypes';
+import { LOGOUT, SET_CURRENT_USER } from '../constants/actionTypes';
 import * as api from '../api/index.js';
 
 export const signin = (formData, navigate) => async (dispatch) => {
@@ -20,3 +20,12 @@ export const signup = (formData, navigate) => async (dispatch) => {
     console.log(error);
   }
 };
+
+export const logout = (navigate) => (dispatch) => {
+  try {
+    dispatch({ type: LOGOUT });
+    navigate('/auth');
+  } catch (error) {
+    console.log(error);
+  }
+}

@@ -7,7 +7,7 @@ import avatar from '../../static/image/avatar.jpeg';
 const UserCard = () => {
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.meal);
-  console.log(userData);
+  // console.log(userData);
 
   const handleStatusChange = () => {
     try {
@@ -32,8 +32,8 @@ const UserCard = () => {
           <div className="about">Meal Type : {userData?.mealtype}</div>
           <div className="about">Meal Status : {userData?.mealstatus ? 'On' : 'off'}</div>
           <div className="buttons">
-              <button>Add guest</button>
-              <button onClick={handleStatusChange}>Turn Meal Off</button>
+          <button>Add guest</button>
+          <button style={{backgroundColor: userData?.mealstatus ? 'red' : 'rgb(30, 228, 45)'}} onClick={handleStatusChange}>Turn Meal {!userData?.mealstatus ? 'On' : 'Off'}</button>
           </div>
         </div>
       </div>

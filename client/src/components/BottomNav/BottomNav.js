@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { FaHome, FaClipboard, FaUserFriends, FaUserCog } from 'react-icons/fa';
 
 const BottomNav = () => {
   return (
@@ -6,19 +7,19 @@ const BottomNav = () => {
       <div className="bottom-nav">
         <div className="tab-container">
           <button className="tab purple active">
-            <i className="fas fa-home"></i>
+            <FaHome />
             <p>Home</p>
           </button>
           <button className="tab pink">
-            <i className="fas fa-clipboard"></i>
+            <FaClipboard />
             <p>Link</p>
           </button>
           <button className="tab yellow">
-            <i className="fas fa-user-friends"></i>
+            <FaUserFriends />
             <p>Search</p>
           </button>
           <button className="tab teal">
-            <i className="fas fa-user-cog"></i>
+            <FaUserCog />
             <p>Profile</p>
           </button>
         </div>

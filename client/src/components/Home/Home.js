@@ -1,7 +1,5 @@
 import React, {useEffect} from 'react';
 import './Home.css';
-import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js";
-// import { DriveEtaOutlined } from '@mui/icons-material';
 import BottomNav from '../BottomNav/BottomNav';
 import UserCard from '../UserCard/UserCard';
 import Navbar from '../Navbar/Navbar';
@@ -9,6 +7,7 @@ import {useDispatch} from 'react-redux';
 import { getUserData } from '../../actions/userData';
 
 const Home = () => {
+  // <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js'></script>
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -16,7 +15,7 @@ const Home = () => {
   }, [dispatch]);
   return (
     <div className="main-container">
-      <Navbar />
+      <Navbar isLoggedIn={true} />
       <UserCard />
       <BottomNav />
     </div>

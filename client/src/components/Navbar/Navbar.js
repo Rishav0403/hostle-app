@@ -6,10 +6,19 @@ import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import Avatar from '@mui/material/Avatar';
 import avatar from '../../static/image/avatar.jpeg';
+import { logout } from '../../actions/auth';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
-const Navbar = () => {
-  const logout = () => {
-    
+const Navbar = ({isLoggedIn}) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const Logout = () => {
+    try {
+      dispatch(logout(navigate));
+    } catch (error) {
+      console.log(error);
+    }
   }
   return (
   <>
@@ -18,8 +27,8 @@ const Navbar = () => {
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, color:'black', fontWeight:'700' }}>
             PG Hall 2
-          </Typography>      
-          <Chip label='Logout' variant="outlined" color="primary" onClick={logout} avatar={<Avatar src={avatar} />} clickable />
+          </Typography>
+          <Chip label={ !isLoggedIn ? 'Login' : 'Logout'} variant="outlined" color="primary" onClick={Logout} avatar={<Avatar src={avatar} />} clickable />
         </Toolbar>
       </AppBar>
     </Box>

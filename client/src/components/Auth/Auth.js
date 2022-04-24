@@ -24,7 +24,7 @@ const Auth = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    // console.log(formData);
     if(isSignUp){
       dispatch(signup(formData, navigate));
     }
@@ -45,7 +45,7 @@ const Auth = () => {
   
   return (
     <>
-      <Navbar />
+      <Navbar isLoggedIn={false} />
       <Container component='main' maxWidth='xs'>
         <Paper className={classes.paper} elevation={3}>
           <Avatar className={classes.avatar}>
@@ -57,7 +57,7 @@ const Auth = () => {
               {isSignUp && (
                 <>
                   <Input name='name' label='First Name' handleChange={handleChange} />
-                  <Input name='mealtype' label='Last Name' handleChange={handleChange} />
+                  <Input name='mealtype' label='Meal Type' handleChange={handleChange} />
                 </>
               )}
               <Input name='email' label='Email Address' handleChange={handleChange} type='email' />
