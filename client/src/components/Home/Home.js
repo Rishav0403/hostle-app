@@ -5,18 +5,19 @@ import UserCard from '../UserCard/UserCard';
 import Navbar from '../Navbar/Navbar';
 import {useDispatch} from 'react-redux';
 import { getUserData } from '../../actions/userData';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  // <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js'></script>
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(getUserData());
-  }, [dispatch]);
+    dispatch(getUserData(navigate));
+  }, [dispatch, navigate]);
   return (
     <div className="main-container">
       <Navbar isLoggedIn={true} />
-      <UserCard />
+      <UserCard navigate={ navigate } />
       <BottomNav />
     </div>
   )

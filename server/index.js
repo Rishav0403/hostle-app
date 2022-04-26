@@ -16,7 +16,7 @@ app.use(cors());
 app.use(express.static('static'));
 
 // router
-import router from './route/auth.js';
+import router from './route/router.js';
 // import mealRouter from './route/meal.js'
 
 // routes
