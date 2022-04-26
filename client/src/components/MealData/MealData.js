@@ -11,7 +11,7 @@ const MealData = () => {
   const navigate = useNavigate();
   const users = useSelector((state) => state.manager);
 
-  // console.log(users);
+  console.log(users);
   // console.log(Array.isArray(users));
 
   useEffect(() => {
