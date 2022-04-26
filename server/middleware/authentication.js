@@ -7,7 +7,7 @@ const auth = (req, res, next) => {
   // check header
   const authHeader = req.headers.authorization;
   if(!authHeader || !authHeader.startsWith('Bearer ')){
-      throw new UnauthenticatedError('Authentication invalid')
+      UnauthenticatedError('Authentication invalid')
   }
   const token = authHeader.split(' ')[1];
   try {
@@ -20,7 +20,7 @@ const auth = (req, res, next) => {
                };
     next();
   } catch (error) {
-        throw new UnauthenticatedError('Authentication Invalid ');
+        UnauthenticatedError('Authentication Invalid ');
   }
 }
 

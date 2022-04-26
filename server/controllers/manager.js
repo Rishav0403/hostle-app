@@ -1,4 +1,6 @@
 import User from "../models/User.js";
+import { UnauthenticatedError } from '../errors/index.js';
+
 
 export const getNetData = async (req, res) => {
     const {userId } = req.user;
